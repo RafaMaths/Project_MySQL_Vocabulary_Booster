@@ -8,4 +8,4 @@ INNER JOIN order_details od
   ON p.ProductID = od.ProductID
 GROUP BY ProductName
 HAVING AVG(Quantity) > 20.00
-ORDER BY AVG(quantity), ProductName
+ORDER BY AVG(quantity), ProductName;
