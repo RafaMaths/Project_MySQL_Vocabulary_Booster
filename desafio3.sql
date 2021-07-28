@@ -1,6 +1,6 @@
  --Exiba os cargos com a diferença entre seus salários máximo e mínimo
- SELECT
+SELECT
   JOB_TITLE AS 'Cargo',
   (MAX_SALARY - MIN_SALARY) AS 'Diferença entre salários máximo e mínimo'
 FROM jobs
-ORDER BY 'Diferença entre salários máximo e mínimo' DESC, 'Cargo';
+ORDER BY (MAX_SALARY - MIN_SALARY), job_title;
