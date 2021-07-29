@@ -9,4 +9,3 @@ GROUP BY
           a.ContactName,
           a.Country
 ORDER BY a.ContactName;
-      
