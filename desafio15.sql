@@ -2,7 +2,7 @@ DELIMITER $$
 
 CREATE PROCEDURE buscar_media_por_cargo(
   IN cargo VARCHAR(50),
-  OUT media_salario DECIMAL(,2)
+  OUT media_salario DECIMAL(8,2)
 )
 BEGIN  
   SELECT AVG(e.salary) AS 'Média salarial' 
