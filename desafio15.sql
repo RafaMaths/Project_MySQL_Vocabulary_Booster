@@ -14,3 +14,9 @@ BEGIN
 
 END $$
 DELIMITER ;
+
+SET @media;
+
+CALL buscar_media_por_cargo('Programmer', @media);
+
+SELECT @media;
