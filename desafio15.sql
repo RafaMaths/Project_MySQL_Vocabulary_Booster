@@ -11,3 +11,6 @@ BEGIN
   ON e.job_id = j.job_id
   WHERE j.JOB_TITLE = cargo
   INTO media_salario;
+
+END $$
+DELIMITER ;
