@@ -11,7 +11,7 @@ WHEN MONTH(jb.end_date) < 10 THEN CONCAT(DAY(jb.end_date), '/', '0', MONTH(jb.en
 ELSE CONCAT(DAY(jb.end_date), '/', MONTH(jb.end_date), '/', YEAR(jb.end_date))
 END
 AS 'Data de rescisão',
-ROUND(DATEDIFF(jb.END_DATE, jb.START_DATE) / 365 ,2) AS 'Anos Trabalhados'
+ROUND(DATEDIFF(jb.END_DATE, jb.START_DATE) / 365 ,2) AS 'Anos trabalhados'
 FROM hr.employees AS e
 INNER JOIN hr.job_history AS jb
 ON jb.employee_id = e.employee_id
