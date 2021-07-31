@@ -1,22 +1,15 @@
 DELIMITER $$
 
-CREATE PROCEDURE buscar_media_por_cargo(
-  IN cargo VARCHAR(50),
-  OUT media_salario DECIMAL(8,2)
-)
+CREATE PROCEDURE buscar_media_por_cargo(IN cargo VARCHAR(50))
+ 
 BEGIN  
-  SELECT AVG(e.salary) AS 'Média salarial' 
+  SELECT round(AVG(e.salary),2) AS 'Média salarial' 
   FROM employees e
   INNER JOIN jobs j
   ON e.job_id = j.job_id
-  WHERE j.JOB_TITLE = cargo
-  INTO media_salario;
-
+  WHERE cargo = j.JOB_TITLE;
+  
 END $$
 DELIMITER ;
 
-SET @media;
-
-CALL buscar_media_por_cargo('Programmer', @media);
-
-SELECT @media;
+CALL buscar_media_por_cargo('Programmer');
